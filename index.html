@@ -18,6 +18,60 @@
     <!-- place navbar here -->
   </header>
   <main>
+      <form onsubmit="event.preventDefault();">
+        <h1>Students notes</h1>
+        <div class="separation"></div>
+        <div class="corps-formulaire">
+            <div class="gauche">
+                <div class="groupe">
+                    <label>Full Name</label>
+                    <input autocomplete="off" class="fullname" type="text">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="groupe">
+                    <label>Date Of Birth</label>
+                    <input autocomplete="off" class="dateofbirth" type="date">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="groupe">
+                    <label>Votre telephone</label>
+                    <select name="gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                    <i class="fa-solid fa-venus-double"></i>
+                </div>
+                <div class="groupe">
+                    <label>Task 01</label>
+                    <input autocomplete="off" class="task1" type="text">
+                    <i class="fa-solid fa-clipboard"></i>
+                </div>
+                <div class="groupe">
+                    <label>Task02</label>
+                    <input autocomplete="off" class="task2" type="text">
+                    <i class="fa-solid fa-clipboard"></i>
+                </div>
+                <div class="groupe">
+                    <label>Task03</label>
+                    <input autocomplete="off" class="task3" type="text">
+                    <i class="fa-solid fa-clipboard"></i>
+                </div>
+
+            </div>
+            <div class="droite">
+                <div class="groupe">
+                    <label>Result</label>
+                    <div class="result">
+
+                    </div>
+                </div>
+                <div class="pied-formulaire">
+                    <button class="button-calcule submit">Submit</button>
+                    <button class="button-calcule reset">Reset</button>
+                </div>
+            </div>
+        </div>
+    </form>
 
   </main>
   <footer>
