@@ -21,26 +21,55 @@ function validateFullName(fullName){
         return "FullName must be between 3 and 20 characters long.";
     }
     // check the format of the full name.
-    if (!/^[a-zA-Z]+$/.test (fullName)) {
+    if (!/^[a-zA-Z]+$/.test(fullName)) {
        return "FullName must contain only letters and spaces.";
     }
     // if the fullName passes all of the validation rules,return null
     return null
 }
-function validateDate (date){
+function validateDate(date) {
     //check if the date is required.
-    if(!date){
+    if (!date) {
         return "date is required";
     }
     // check the format of the date.
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(date))
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
     return "date must be in the format yyyy-mm-dd";
+}
 
 //
 const today = new Date();
-const minDate = new Date(today.getYear(),today.getMonth(),today.getDate());
-const maxDate = new Date(today.getYear()+1,today.getMonth(),today.getDate());
+const minDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+const maxDate = new Date(today.getFullYear() + 1, today.getMonth(), today.getDate());
 if(date < minDate || date > maxDate){
-    return "date must be between today"
+    return "date must be between today and one year from today"
 }
-return null;}
+return null;
+}
+function validateGender(gender){
+    if (!gender){
+        return "gender is required";
+    }
+    const validGenders = ["Male","Female"];
+    if (!validGenders.includes(gender)){
+        return "gender must be a valid value";
+    }
+    return null;
+}
+
+// afficher les valeurs des champs
+submit.addEventListener('click', (event)=>{
+ if (validateFullName(fullName.value) !== null) {
+ alert(validateFullName(fullName.value))
+ return;
+ }
+ if (validateDate(dateOfBirth.value) !== null){
+     alert(validateDate(dateOfBirth.value))
+     return;
+ }
+ if (validateGender(gender.value) !== null){
+     alert(validateGender(gender.value))
+     return;
+ }
+
+})
