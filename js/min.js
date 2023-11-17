@@ -56,6 +56,29 @@ function validateGender(gender){
     }
     return null;
 }
+function validateMarksText(text){
+    // check if the text is required.
+    if (!text){
+        return"Marks text is required"
+    }
+    // check the format of the text
+    if (!/^[0-9]+(\.[0-9])?$/.test(text)){
+        return "Marks text must be a number or a pourcentage. "
+    }
+
+    // check the range of the text.
+    const minMarks = 0 ;
+    const maxMarks = 20 ;
+    if (text < minMarks || text > maxMarks) {
+        return "marks text must be between 0 and 100"
+    }
+    // check the dicimal places of the text
+    if (text.includes(".") && text.split(".").length - 1 > 2) {
+        return "marks text must have at most two decimal places."
+    }
+    // if the text passes all the validation rules , return null
+    return null;
+}
 
 // afficher les valeurs des champs
 submit.addEventListener('click', (event)=>{
@@ -71,5 +94,15 @@ submit.addEventListener('click', (event)=>{
      alert(validateGender(gender.value))
      return;
  }
-
-})
+ if (validateMarksText(task1.value)!==null){
+    alert(validateMarksText(task1.value))
+    return;
+ }
+ if (validateMarksText(task2.value)!==null){
+    alert(validateMarksText(task2.value))
+    return;
+}
+if (validateMarksText(task3.value)!==null){
+    alert(validateMarksText(task3.value))
+    return;}
+    // calculer le resultat
