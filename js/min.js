@@ -81,7 +81,8 @@ function validateMarksText(text){
 }
 
 // afficher les valeurs des champs
-submit.addEventListener('click', (event)=>{
+submit.addEventListener('click', (event)=> {
+    console.log(gender.value)
  if (validateFullName(fullName.value) !== null) {
  alert(validateFullName(fullName.value))
  return;
